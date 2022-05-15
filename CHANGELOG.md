@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/william-apps/logseq-plugin-page-export/compare/v1.1.1...v1.1.2) (2022-05-15)
+
+
+### Bug Fixes
+
+* missing eslint-plugin-react-hooks ([4ce1bd5](https://github.com/william-apps/logseq-plugin-page-export/commit/4ce1bd57eb1c914d0afc66fa5f9b8231497fe7cf))
+
 ## [1.1.1](https://github.com/william-apps/logseq-plugin-page-export/compare/v1.1.0...v1.1.1) (2022-05-15)
 
 
