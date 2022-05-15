@@ -46,12 +46,12 @@ function main() {
 
   logseq.provideStyle(css`
     .${openIconName} {
-      display: inline-flex;
-      align-items: center;
+      text-align: center;
       opacity: 0.55;
       font-weight: 500;
       padding: 0 5px;
       position: relative;
+      min-width: 20px;
     }
 
     .${openIconName}:hover {
@@ -64,7 +64,9 @@ function main() {
     template: `
       <a data-on-click="show"
          class="${openIconName}"
-         style="opacity: .6; display: inline-flex;">⚙️</a>
+         style="opacity: .6; display: inline-flex;">
+         E
+      </a>
     `,
   });
 }

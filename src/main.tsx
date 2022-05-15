@@ -39,9 +39,11 @@ function main() {
 
   logseq.provideStyle(css`
     .${openIconName} {
+      text-align: center;
       opacity: 0.55;
       font-size: 20px;
       margin-top: 4px;
+      min-width: 20px;
     }
 
     .${openIconName}:hover {
@@ -52,7 +54,9 @@ function main() {
   logseq.App.registerUIItem("toolbar", {
     key: openIconName,
     template: `
-      <div data-on-click="show" class="${openIconName}">⚙️</div>
+      <div data-on-click="show" class="${openIconName}" title="Export Page">
+        E
+      </div>
     `,
   });
 }
