@@ -99,7 +99,7 @@ const extractParentCss = () => {
   return allCSS;
 };
 
-const injectStylesToCurrentDocument = (
+const injectStylesToTargetDocument = (
   cssText: string,
   targetDom = document
 ) => {
@@ -113,12 +113,14 @@ export const exportToPngImgUrl = (
   querySelector: string,
   ignoreClassNameList: Array<string>
 ): Promise<string> => {
+  // the plugin itself is loaded in a iframe
   const targetDom = parent.document.querySelector(querySelector) as HTMLElement;
   const bgColor = parent
     .getComputedStyle(parent.document.body, null)
     .getPropertyValue("background-color");
 
   return html2canvas(targetDom, {
+    // https://html2canvas.hertzen.com/configuration
     allowTaint: true,
     useCORS: true,
     backgroundColor: bgColor,
@@ -133,7 +135,7 @@ export const exportToPngImgUrl = (
       });
     },
     onclone: (clonedDocument) => {
-      injectStylesToCurrentDocument(extractParentCss(), clonedDocument);
+      injectStylesToTargetDocument(extractParentCss(), clonedDocument);
       return clonedDocument;
     },
   }).then((canvas) => {
