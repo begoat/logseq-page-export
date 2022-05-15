@@ -3,7 +3,7 @@
 > a plugin that makes use of [html2canvas](https://html2canvas.hertzen.com/) to export current page in logseq
 
 ## About this plugin
-
+![demo.gif](./demo.gif)
 
 ## How to use
 1. click `icon` in toolbar
