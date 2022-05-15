@@ -4,7 +4,7 @@ import {
   exportToPngImgUrl,
   savePngImgUrl,
   useEventListener,
-  usePageName,
+  getExportName,
 } from "./utils";
 
 const HIDE_UI_KEY_LIST = ["Escape"];
@@ -20,7 +20,7 @@ function App() {
     defaultIgnoreClassName.join(" ")
   );
   const [imageUrl, setImageUrl] = useState("");
-  const pageName = usePageName();
+  const [pageName, setPageName] = useState("logseq_export");
   const visible = useAppVisible();
   useEventListener(
     "keydown",
@@ -44,6 +44,9 @@ function App() {
   useEffect(() => {
     if (visible) {
       exportOnce();
+      getExportName().then((name) => {
+        setPageName(name);
+      });
     }
   }, [visible]);
 

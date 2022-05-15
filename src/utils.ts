@@ -33,15 +33,9 @@ export const useSidebarVisible = () => {
   return visible;
 };
 
-export const usePageName = () => {
-  const [name, setName] = useState("");
-  const isMounted = useMountedState();
-  React.useEffect(() => {
-    if (isMounted()) {
-      setName("123123");
-    }
-  }, []);
-  return name;
+export const getExportName = async () => {
+  const currentPage = await logseq.Editor.getCurrentPage();
+  return currentPage?.name;
 };
 
 /**
@@ -123,6 +117,7 @@ export const exportToPngImgUrl = (
     // https://html2canvas.hertzen.com/configuration
     allowTaint: true,
     useCORS: true,
+    imageTimeout: 5000,
     backgroundColor: bgColor,
     ignoreElements: (element) => {
       return ignoreClassNameList.some((i) => {
