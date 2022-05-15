@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/william-apps/logseq-plugin-page-export/compare/v1.0.0...v1.1.0) (2022-05-15)
+
+
+### Features
+
+* update icon and packagename ([b430f7c](https://github.com/william-apps/logseq-plugin-page-export/commit/b430f7c69f9f8d43791510517cda23338ca42ca9))
+
 # 1.0.0 (2022-05-15)
 
 
