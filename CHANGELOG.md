@@ -1,3 +1,12 @@
+# 1.0.0 (2022-05-15)
+
+
+### Features
+
+* **export-page:** set default export filename to current page name ([dee58bc](https://github.com/william-apps/logseq-plugin-page-export/commit/dee58bcd20f6661af27061927f91ac58a5bc387d))
+* **page-export:** add form to handle page export ([aaedce5](https://github.com/william-apps/logseq-plugin-page-export/commit/aaedce5960c132c4a5c2b615b23835c91a782aae))
+* **page-export:** tune css ([5d3cfa7](https://github.com/william-apps/logseq-plugin-page-export/commit/5d3cfa7b6d0403b38693584c1f08d69d9e998cee))
+
 ## [2.1.1](https://github.com/pengx17/logseq-plugin-template-react/compare/v2.1.0...v2.1.1) (2022-03-24)
 
 
