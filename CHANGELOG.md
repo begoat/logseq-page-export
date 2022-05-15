@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/william-apps/logseq-plugin-page-export/compare/v1.1.0...v1.1.1) (2022-05-15)
+
+
+### Bug Fixes
+
+* **page-export:** fix querySelector & ignoreClassName not working ([f9fdb5f](https://github.com/william-apps/logseq-plugin-page-export/commit/f9fdb5fd176a83c61cd6354a1c579a5e7bf1fece))
+
 # [1.1.0](https://github.com/william-apps/logseq-plugin-page-export/compare/v1.0.0...v1.1.0) (2022-05-15)
 
 
