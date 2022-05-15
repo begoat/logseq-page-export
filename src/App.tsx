@@ -39,7 +39,7 @@ function App() {
         setImageUrl(url);
       }
     );
-  }, []);
+  }, [querySelector, ignoreClassName]);
 
   useEffect(() => {
     if (visible) {
