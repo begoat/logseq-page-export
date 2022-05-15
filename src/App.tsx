@@ -8,9 +8,17 @@ import {
 } from "./utils";
 
 const HIDE_UI_KEY_LIST = ["Escape"];
+const defaultIgnoreClassName = [
+  // ignore other plguin icons in page toolbar
+  "ui-items-container",
+  // ignore reference link block
+  "references",
+];
 function App() {
   const [querySelector, setQuerySelector] = useState("#main-content-container");
-  const [ignoreClassName, setIgnoreClassName] = useState("references");
+  const [ignoreClassName, setIgnoreClassName] = useState(
+    defaultIgnoreClassName.join(" ")
+  );
   const [imageUrl, setImageUrl] = useState("");
   const pageName = usePageName();
   const visible = useAppVisible();
@@ -34,8 +42,10 @@ function App() {
   }, []);
 
   useEffect(() => {
-    exportOnce();
-  }, []);
+    if (visible) {
+      exportOnce();
+    }
+  }, [visible]);
 
   if (visible) {
     return (
@@ -47,28 +57,38 @@ function App() {
           <br />
           <br />
           <div className="flex item-center justify-between">
-            <span>ignoreClassName</span>
+            <div className="inline-flex items-center">
+              <span>ignoreClassName</span>
+              <span className="text-[10px] ml-2 inline-block">
+                (ignore elements by class(separate by space))
+              </span>
+            </div>
             <input
               type="text"
               value={ignoreClassName}
               onChange={(e) => {
                 setIgnoreClassName(e.target.value);
               }}
-              className="ml-10 border-2 border-slate-100 grow"
+              className="ml-10 border-2 border-slate-100 grow w-[220px]"
             ></input>
           </div>
           <div className="mt-6 flex item-center justify-between">
-            <span>querySelector</span>
+            <div className="inline-flex items-center">
+              <span>querySelector</span>
+              <span className="text-[10px] ml-2 inline-block">
+                (querySelector for target dom to export)
+              </span>
+            </div>
             <input
               type="text"
               value={querySelector}
               onChange={(e) => {
                 setQuerySelector(e.target.value);
               }}
-              className="ml-10 border-2 border-slate-100 grow"
+              className="ml-10 border-2 border-slate-100 grow w-[220px]"
             ></input>
           </div>
-          <div className="min-h-[300px] border-2 border-slate-100 mt-2 flex justify-center content-center">
+          <div className="min-h-[304px] overflow-hidden border-2 border-slate-100 mt-2 flex justify-center content-center max-w-screen-sm min-w-screen-sm">
             {imageUrl ? (
               <img
                 src={imageUrl}
