@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/william-apps/logseq-plugin-page-export/compare/v1.1.2...v1.1.3) (2022-05-17)
+
+
+### Bug Fixes
+
+* wrong plugin name in html ([2075a0c](https://github.com/william-apps/logseq-plugin-page-export/commit/2075a0c4c1dacae2546368f7b096586ee6058adc))
+
 ## [1.1.2](https://github.com/william-apps/logseq-plugin-page-export/compare/v1.1.1...v1.1.2) (2022-05-15)
 
 
